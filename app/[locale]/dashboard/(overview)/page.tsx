@@ -9,7 +9,7 @@ import {
   RevenueChartSkeleton,
 } from "@/app/ui/skeletons";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import {  } from "next-intl/server";
 
 export default function Page({ params: { locale } }: any) {
   const t = useTranslations("Dashboard");

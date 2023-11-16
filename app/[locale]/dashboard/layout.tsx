@@ -1,5 +1,4 @@
 import SideNav from "@/app/ui/dashboard/sidenav";
-import { unstable_setRequestLocale } from "next-intl/server";
 
 export default async function Layout({ children, params: { locale } }: any) {
   return (

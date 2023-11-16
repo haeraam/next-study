@@ -2,7 +2,7 @@ import { generateYAxis } from "@/app/lib/utils";
 import { CalendarIcon } from "@heroicons/react/24/outline";
 import { lusitana } from "@/app/ui/font";
 import { fetchRevenue } from "@/app/lib/data";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 // This component is representational only.
 // For data visualization UI, check out:
