@@ -11,7 +11,6 @@ import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 // https://airbnb.io/visx/
 
 export default async function RevenueChart({ locale }: any) {
-  unstable_setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Dashboard" });
 
   const chartHeight = 350;

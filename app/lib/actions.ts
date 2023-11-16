@@ -1,8 +1,8 @@
 "use server";
 
+import { redirect } from "@/middleware";
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 import { z } from "zod";
 
 const FormSchema = z.object({

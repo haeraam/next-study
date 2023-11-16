@@ -1,7 +1,7 @@
 "use client";
 
 import { CustomerField } from "@/app/lib/definitions";
-import Link from "next/link";
+import { Link } from "@/middleware";
 import {
   CheckIcon,
   ClockIcon,

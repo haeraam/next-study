@@ -7,7 +7,7 @@ import {
   CurrencyDollarIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
-import Link from "next/link";
+import { Link } from "@/middleware";
 import { Button } from "@/app/ui/button";
 import { updateInvoice } from "@/app/lib/actions";
 import { useFormState } from "react-dom";
