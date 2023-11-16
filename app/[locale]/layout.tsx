@@ -17,7 +17,7 @@ export default async function RootLayout({
   );
 }
 
-const locales = ["en", "ko"];
+const locales = ["en", "kr"];
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
