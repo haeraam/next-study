@@ -66,6 +66,7 @@ export async function createInvoice(prevState: State, formData: FormData) {
   // Revalidate the cache for the invoices page and redirect the user.
   revalidatePath("/dashboard/invoices");
   redirect("/dashboard/invoices");
+  return {};
 }
 
 const UpdateInvoice = FormSchema.omit({ id: true, date: true });
@@ -102,6 +103,7 @@ export async function updateInvoice(
 
   revalidatePath("/dashboard/invoices");
   redirect("/dashboard/invoices");
+  return {};
 }
 export async function deleteInvoice(id: string) {
   throw new Error("Failed to Delete Invoice");
