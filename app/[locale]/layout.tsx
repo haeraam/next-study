@@ -5,9 +5,13 @@ import { unstable_setRequestLocale } from "next-intl/server";
 
 const locales = ["en", "ko"];
 
-export default async function RootLayout({ children, params: { locale } }: any) {
+export default async function RootLayout({
+  children,
+  params: { locale },
+}: any) {
   if (!locales.includes(locale as any)) notFound();
 
+  unstable_setRequestLocale(locale);
   return (
     <html lang={locale}>
       <body className={`${inter.className} antialiased`}>{children}</body>
@@ -15,3 +19,6 @@ export default async function RootLayout({ children, params: { locale } }: any) 
   );
 }
 
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
