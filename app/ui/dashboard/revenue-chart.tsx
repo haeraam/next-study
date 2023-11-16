@@ -1,8 +1,8 @@
 import { generateYAxis } from "@/app/lib/utils";
 import { CalendarIcon } from "@heroicons/react/24/outline";
 import { lusitana } from "@/app/ui/font";
-import { Revenue } from "@/app/lib/definitions";
 import { fetchRevenue } from "@/app/lib/data";
+import { getTranslations } from "next-intl/server";
 
 // This component is representational only.
 // For data visualization UI, check out:
@@ -10,7 +10,9 @@ import { fetchRevenue } from "@/app/lib/data";
 // https://www.chartjs.org/
 // https://airbnb.io/visx/
 
-export default async function RevenueChart() {
+export default async function RevenueChart({ locale }: any) {
+  const t = await getTranslations({ locale, namespace: "Dashboard" });
+
   const chartHeight = 350;
   // NOTE: comment in this code when you get to this point in the course
   const revenue = await fetchRevenue();
@@ -23,7 +25,7 @@ export default async function RevenueChart() {
   return (
     <div className="w-full md:col-span-4">
       <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
-        Recent Revenue
+        {t("Recent Revenue")}
       </h2>
       {/* NOTE: comment in this code when you get to this point in the course */}
 
