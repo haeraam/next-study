@@ -2,7 +2,7 @@ import { generateYAxis } from "@/app/lib/utils";
 import { CalendarIcon } from "@heroicons/react/24/outline";
 import { lusitana } from "@/app/ui/font";
 import { fetchRevenue } from "@/app/lib/data";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 // This component is representational only.
 // For data visualization UI, check out:
@@ -11,6 +11,7 @@ import { getTranslations } from "next-intl/server";
 // https://airbnb.io/visx/
 
 export default async function RevenueChart({ locale }: any) {
+  unstable_setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Dashboard" });
 
   const chartHeight = 350;
