@@ -3,8 +3,6 @@ import { inter } from "../ui/font";
 import { notFound } from "next/navigation";
 import { unstable_setRequestLocale } from "next-intl/server";
 
-const locales = ["en", "ko"];
-
 export default async function RootLayout({
   children,
   params: { locale },
@@ -19,6 +17,7 @@ export default async function RootLayout({
   );
 }
 
+const locales = ["en", "ko"];
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }

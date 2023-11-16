@@ -9,9 +9,9 @@ import {
   RevenueChartSkeleton,
 } from "@/app/ui/skeletons";
 import { useTranslations } from "next-intl";
-import {  } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
-export default function Page({ params: { locale } }: any) {
+export default function Page() {
   const t = useTranslations("Dashboard");
 
   return (
@@ -26,7 +26,7 @@ export default function Page({ params: { locale } }: any) {
       </div>
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
         <Suspense fallback={<RevenueChartSkeleton />}>
-          <RevenueChart locale={locale} />
+          <RevenueChart />
         </Suspense>
         <Suspense fallback={<LatestInvoicesSkeleton />}>
           <LatestInvoices />

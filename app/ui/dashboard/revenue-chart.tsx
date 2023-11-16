@@ -1,16 +1,21 @@
+"use server";
+
 import { generateYAxis } from "@/app/lib/utils";
 import { CalendarIcon } from "@heroicons/react/24/outline";
 import { lusitana } from "@/app/ui/font";
 import { fetchRevenue } from "@/app/lib/data";
 import { getTranslations } from "next-intl/server";
-
+import { usePathname, useRouter } from "@/middleware";
+import { headers } from "next/headers";
 // This component is representational only.
 // For data visualization UI, check out:
 // https://www.tremor.so/
 // https://www.chartjs.org/
 // https://airbnb.io/visx/
 
-export default async function RevenueChart({ locale }: any) {
+export default async function RevenueChart() {
+  const locale = headers().get("locale");
+
   const t = await getTranslations({ locale, namespace: "Dashboard" });
 
   const chartHeight = 350;
